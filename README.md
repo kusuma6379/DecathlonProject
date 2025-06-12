@@ -37,7 +37,7 @@ Both **exploratory manual testing** and **automated testing using Java, Selenium
 
 ## 🧪 Features Tested
 
-| Feature                     | Manual Testing | Automation (Selenium) |
+| Feature                    | Manual Testing | Automation (Selenium) |
 |----------------------------|----------------|------------------------|
 | 🔐 Login Page              | ✅              | ✅                     |
 | 🏠 Homepage Navigation     | ✅              | ✅                     |
@@ -61,32 +61,7 @@ Both **exploratory manual testing** and **automated testing using Java, Selenium
 
 ---
 
-## 📁 Project Structure
-DecathlonProject
 
-
-
-│
-├── src
-│ └── test
-│ ├── java
-│ │ ├── Decathlonproject # POM classes
-│ │ │ ├── CartPage.java
-│ │ │ ├── Homepage.java
-│ │ │ ├── LoginPage.java
-│ │ │ ├── ProductDetailsPage4th.java
-│ │ │ └── ProductListingPage.java
-│ │ │
-│ │ └── DecathlonProjectTestRunner # Test classes
-│ │ ├── CartPageTest.java
-│ │ ├── HomepageTest.java
-│ │ ├── LoginpageTest.java
-│ │ ├── ProductDetilePage4thTest.java
-│ │ └── ProductListingpageTest.java
-│
-├── pom.xml # Maven configuration
-├── testng.xml # TestNG suite file
-└── README.md # Project documentation
 
 
 
