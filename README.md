@@ -63,6 +63,9 @@ Both **exploratory manual testing** and **automated testing using Java, Selenium
 
 ## 📁 Project Structure
 DecathlonProject
+
+
+
 │
 ├── src
 │ └── test
