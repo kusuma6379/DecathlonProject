@@ -1,107 +1,98 @@
-# Decathlon India Website Testing Project
 
-## **Overview**
-The **Decathlon India** website is a major e-commerce platform for sports and outdoor products. This project includes both **manual** and **automated testing** to ensure a seamless and error-free shopping experience.
+# 🛒 Decathlon Website Testing Project
 
-## **Key Features**
-
-### **Testing Scope**
-- 🔍 **Usability Testing**  
-  Ensure the website is user-friendly, intuitive, and smooth for product search, cart handling, and checkout.
-
-- ✅ **Functionality Testing**  
-  Verify all core flows like login, product navigation, cart updates, and final purchase.
-
-- ⚙️ **Automation Testing**  
-  Automate core user journeys using Selenium, Java, and TestNG.
-
-- 📝 **Manual Testing**  
-  Execute exploratory and planned tests to detect edge case issues in workflows.
-
-- 🛠️ **Bug Tracking & Documentation**  
-  Use Jira for issue tracking and Excel, Word, and XMind for test documentation.
+## 📘 Overview
+This project involves testing the **Decathlon India e-commerce website** using both **Manual and Automation Testing** techniques.  
+It covers user flows like login, product search, cart operations, and checkout to ensure functionality and user experience are working perfectly.
 
 ---
 
-### **Expanded Functionalities**
-1. **Login Functionality**
-2. **Product Search and Filter**
-3. **Product Details Page**
-4. **Cart Management**
-5. **Checkout Process**
-6. **Order Summary**
-7. **Error Handling and Alerts**
-8. **UI/UX Feedback Validation**
-9. **Promo Code Handling**
-10. **Cross-browser Compatibility**
+## 🔍 What Was Tested
+- User Login and Logout
+- Product Search and Filter
+- Add/Remove Products from Cart
+- Checkout Process and Order Summary
+- Error Message Validations
+- Cross-Browser Compatibility
 
 ---
 
-## **Technologies Used**
-- **Programming Language**: Java  
-- **Automation Framework**: Selenium WebDriver with POM  
-- **Test Execution**: TestNG  
+## 🧪 Testing Types
+- ✅ Manual Testing (Test Cases, Bug Reports, Mind Map)
+- 🤖 Automation Testing using Selenium + Java + TestNG
+- 🔁 Functional Testing
+- 🧠 Exploratory Testing
+- 📊 Bug Tracking via Jira
+
+---
+
+## 🧰 Tools Used
+- **Language**: Java  
+- **Automation**: Selenium WebDriver, TestNG  
 - **Build Tool**: Maven  
-- **Version Control**: Git  
 - **Bug Tracking**: Jira  
-- **Documentation**: Excel, Word, XMind
+- **Documentation**: Excel, Word, XMind  
+- **Framework**: Page Object Model (POM)  
+- **Version Control**: Git + GitHub
 
 ---
 
-## **Project Structure**
-DecathlonProject
-│
-├── src
-│ ├── main
-│ │ └── java
-│ │ └── Pages # Page Object Model classes
-│
-├── src
-│ └── test
-│ └── java
-│ ├── TestCases # Automation test scripts
-│ └── Utilities # Utility files
-│
-├── pom.xml # Maven dependencies
-└── README.md # Project overview (this file)
-
+## 📂 Project Structure (Simple View)
+DecathlonProject/
+├── src/
+│ ├── main/java/pages/ # Page Objects
+│ └── test/java/tests/ # Test Cases
+├── pom.xml # Maven config
+├── testng.xml # Test Suite
+└── README.md # This file
 
 ---
 
-## **Setup Instructions**
+## 🚦 Test Execution
+> _You can run tests using your IDE (Eclipse/IntelliJ) or Maven command:_
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/kusuma6379/DecathlonProject.git
-   cd DecathlonProject
-Automated Test Scenarios
-1. Login Functionality
-Validate login with valid/invalid credentials.
+- Right-click on `testng.xml` → Run as TestNG Suite  
+- Or use this command (if Maven is configured):
+  ```bash
+  mvn test
 
-Verify alert messages.
+---
 
-2. Product Search and Filters
-Automate search flow with filters and sorting options.
+## 🚦 Test Execution
+> _You can run tests using your IDE (Eclipse/IntelliJ) or Maven command:_
 
-3. Checkout Process
-Automate cart operations and checkout validation.
+- Right-click on `testng.xml` → Run as TestNG Suite  
+- Or use this command (if Maven is configured):
+  ```bash
+  mvn test
+✨ Highlights
+Real-world POM-based automation framework
 
-4. Error Handling
-Handle scenarios like empty cart and invalid promo codes.
+Covered both Manual and Automation test approaches
 
-Highlights
-Reusable POM framework with TestNG and Maven integration.
+Bugs tracked and reported via Jira
 
-Manual and automation test documentation.
+Full test documentation prepared (Plan, Cases, Mind Map)
 
-Jira-based defect tracking.
-
-Team-friendly, scalable structure.
-
-Contributors
+👩‍💻 Created By
 Madavali Kusuma
+🔗 GitHub: kusuma6379
+🔗 LinkedIn: LinkedIn Profile
 
+🛍️ Thank you for checking out the Decathlon Website Testing Project!
 
+markdown
+Copy
+Edit
 
+---
+
+You don’t need to use `git clone` or command line. Just:
+
+1. Go to your GitHub repo
+2. Click **Add file > Create new file**
+3. Name it `README.md`
+4. Paste all the content above
+5. Click **Commit new file**
 
 
