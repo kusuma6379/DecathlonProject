@@ -37,14 +37,6 @@ It covers user flows like login, product search, cart operations, and checkout t
 
 ---
 
-## 📂 Project Structure (Simple View)
-DecathlonProject/
-├── src/
-│ ├── main/java/pages/ # Page Objects
-│ └── test/java/tests/ # Test Cases
-├── pom.xml # Maven config
-├── testng.xml # Test Suite
-└── README.md # This file
 
 ---
 
