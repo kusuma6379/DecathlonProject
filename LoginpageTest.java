@@ -1,5 +1,4 @@
-package Decathlonproject;
-
+package DecathlonProjectTestRunner;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -8,10 +7,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import DecathlonProjectTest.LoginPage;
 public class LoginpageTest {
+	
 	WebDriver driver;
 	@BeforeClass
-	void Setup() throws InterruptedException {
+	public void Setup() throws InterruptedException {
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.get("https://www.decathlon.in/");
@@ -20,21 +21,25 @@ public class LoginpageTest {
 	}
 	
 	@Test	 
-    void LoginPhoneNumber() throws InterruptedException {
-    	 LoginPage Phone=new LoginPage();
-		 Phone.Siginin();
-		 Phone.PhoneNumberSelect();
-		 Phone.PhoneNumberEnter("7989292662");
-		 Phone.Next();
-		 Phone.OTP("344145");
-		 Phone.BUTTON();
-		 Thread.sleep(5000);
+    public void LoginPhoneNumber() throws InterruptedException  {
+		LoginPage Phone=new LoginPage(driver);
+        
+        
+        
+       // Phone.loginWithEmail("kusumababu6370@gmail.com");  
+		Phone.loginWithPhoneNumber();
+		Phone.handlePopup("nothanks");
+	    Thread.sleep(5000);
 		 
 	}
 	@AfterClass
-	void teardown() {
+	public void teardown() {
 		driver.quit();
 		
 	}
 
 }
+
+	
+	
+
