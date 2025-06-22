@@ -6,6 +6,8 @@ This project focuses on **end-to-end testing of the Decathlon shopping platform*
 
 ## 🌐 Project Overview
 
+https://cdn.shopify.com/s/files/1/1330/6287/files/DECATHLON_logo_lockup_stacked_blue_rgb_---_Expires_on_31-12-2100.jpg?v=1744260897
+
 
 <img width="250" alt="decathlon-logo" src="https://www.decathlon.in/_next/image?url=https%3A%2F%2Fwww.decathlon.in%2F_logo.jpg&w=384&q=75" />
 
