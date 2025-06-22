@@ -5,7 +5,7 @@ This project focuses on **end-to-end testing of the Decathlon shopping platform*
 ---
 
 ## 🌐 Project Overview
-![Grip Product](./aa58f85c-b819-417e-9634-ec339d790bd9.png)
+
 
 <img width="250" alt="decathlon-logo" src="https://www.decathlon.in/_next/image?url=https%3A%2F%2Fwww.decathlon.in%2F_logo.jpg&w=384&q=75" />
 
