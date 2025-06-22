@@ -77,6 +77,14 @@ This project focuses on **end-to-end testing of the Decathlon shopping platform*
 
 ---
 
+
+### 📘 ***Documents***
+1. [Test Plan](https://docs.google.com/document/d/1hzuq-FmEyOaGgBc1h5f3xvrRpE3oS1iN02aWoRV7K5c/edit?tab=t.0)
+2. [Test Plan- X-MindMap]()
+3. [Test Scenarios and Tets Cases](https://docs.google.com/spreadsheets/d/1w2ugu44RiI0N6RuhfC9jAaK1FuJFpSlK3qSWLY3MoJ4/edit?gid=0#gid=0)
+4. [Bug Report](https://docs.google.com/spreadsheets/d/1ZWtWUgt6fbBMocP_jBa3Qwi6lvb8c2sVC-dH5IOn5o8/edit?gid=0#gid=0)
+---
+
 ## ✨ Conclusion
 
 This solo project demonstrates solid understanding of end-to-end manual and automation testing. Focused on:
