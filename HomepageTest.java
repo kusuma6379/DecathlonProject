@@ -1,43 +1,40 @@
-package Decathlonproject;
-
-import java.time.Duration;
+package DecathlonProjectTestRunner;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
+import DecathlonProjectTest.Homepage;
+
+import java.time.Duration;
 
 public class HomepageTest {
-	WebDriver driver;
-	@BeforeClass
-	void Setup() throws InterruptedException {
-		driver=new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://www.decathlon.in/");
-		driver.manage().window().maximize();
-		Thread.sleep(5000);
-	}
-	@Test
-	void ProjectTest() {
-		Homepage test=new Homepage(driver);
-		test.Logo();
-		test.Searchbar("Tshirts");
-		test.Productitems();
-		test.Account();
-		test.Mystorebutton();
-		test.Supportsection();
-		test.Wishlistsection();
-		test.cartbutton();
-		test.WomenProducts();
-		test.Bannerspage();
-		test.Footersection();
-		test.Countries();
-		
-	}
-	@AfterClass
-	void teardown() {
-		driver.quit();
-	}
 
+    WebDriver driver;
+
+    @BeforeClass
+    public void setup() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.get("https://www.decathlon.in/");
+        driver.manage().window().maximize();
+    }
+
+    @Test
+    public void homepageFunctionalityTest() {
+        Homepage page = new Homepage(driver);
+          page.closePopupIfVisible();
+          page.clickProducts();
+         
+          page.TriblebarClick();
+          page.Logo();  
+          page.clickMyStore();   
+         page.clickWishlist();
+          page.clickCart(); 
+
+    }
+
+    @AfterClass
+    public void teardown() {
+        driver.quit();
+    }
 }
