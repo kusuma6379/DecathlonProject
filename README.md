@@ -90,7 +90,7 @@ This solo project demonstrates solid understanding of end-to-end manual and auto
 
 **Madavali Kusuma**  
 📧 Email: kusumababu6379@gmail.com  
-🔗 LinkedIn: [linkedin.com/in/madavali-kusuma-3496b4341](https://www.linkedin.com/in/madavali-kusuma-3496b4341/)  
+🔗 LinkedIn: [https://www.linkedin.com/in/madavali-kusuma-441088370/](https://www.linkedin.com/in/madavali-kusuma-441088370/)  
 💻 GitHub: [github.com/kusuma6379](https://github.com/kusuma6379)
 
 
