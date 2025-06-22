@@ -1,128 +1,142 @@
-package Decathlonproject;
+package DecathlonProjectTest;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+import java.util.List;
 
 public class ProductDetailsPage4th {
-	
-	WebDriver driver;
-	ProductDetailsPage4th(WebDriver driver){
-		this.driver=driver;
-	}
-	
-	By search=By.xpath("//span[text()=\"Search for  \"][1]");
-	By watchlocate=By.xpath("//img[@class=\"w-full swiper-lazy mix-blend-multiply\"][1]");
-	By reviews=By.xpath("//p[text()=\"This product does not have reviews yet!!\"]");
-	By typeReviews=By.xpath("//button[@class=\"flex items-center justify-center LTIpbf  py-3 TCcZvG text-black font-bold border border-black hover:bg-purple-200\"]");
-	By star=By.xpath("//div[@class=\"react-rater-star is-active\"][1]");
-	By reviewtitle=By.xpath("//input[@id=\"review-title\"]");
-	By Textreview=By.xpath("//textarea[@id=\"comment\"]");
-	By yes=By.xpath("//div[text()=\"Yes\"]");
-	By dropdown=By.xpath("//div[@class=\"css-1dimb5e-singleValue\"]");
-	By next=By.xpath("//button[@class=\"SidXVk YZAxdU gktSja md:min-w-[140px] SBnjPW flex items-center justify-center bg-blue-400 text-white cursor-pointer border border-solid gXOSPY transition\"]");
-	By email=By.xpath("//input[@id=\"email\"]");
-	By firstname=By.xpath("//input[@id=\"first-name\"]");
-	By lastname=By.xpath("//input[@id=\"last-name\"]");
-	By radiobutton=By.xpath("//input[@id=\"woman\"]");
-	By age=By.xpath("//div[@id=\"react-select-5-placeholder\"]");
-	By checkbox=By.xpath("//input[@id=\"rules\"]");
-	By publishreview=By.xpath("//button[@color=\"brand-blue\"]");
-	
-	
-	
-	
-	
-	
-	
-	
-	void searchbar(String watch) {
-		WebElement ser=driver.findElement(search);
-		ser.sendKeys(watch);
-		ser.click();
-		Assert.assertTrue(true);
-	}
-	void LocateWatch() {
-		driver.findElement(watchlocate).click();
-	}
-	void Reviews() {
-		driver.findElement(reviews).click();
-		String ExpectedResult="Products reviews are avaliable";
-		String ActualResult="This product does not have reviews yet!!";
-		if(ExpectedResult.equals(ActualResult)) {
-			System.out.println("We can able to see reviews");
-		}else {
-			System.out.println("We are unable to see reviews");
-		 }
-		
-	}
-	void TypeReviews() {
-		driver.findElement(typeReviews).click();
-		
-	}
-	void Starts() {
-		driver.findElement(star).click();
-		String ExpectedResult="Excellent";
-		String ActualResult="Excellent";
-		Assert.assertEquals(ExpectedResult,ActualResult);
-	}
-	void ReviewTitle(String ExcellentTitle) {
-		driver.findElement(reviewtitle).sendKeys("ExcellentTitle");
-	}
-	void TextReviews() {
-		driver.findElement(Textreview).sendKeys("It was good");
-	}
-	void YES() {
-		driver.findElement(yes).click();
-	}
-	void Dropdown() {
-		WebElement sel =driver.findElement(dropdown);
-		sel.click();
-		Select drop=new Select(sel);
-		drop.selectByVisibleText("1 week or less");
-		
-	}
-	void Next() {
-		driver.findElement(next).click();
-		
-	}
-	void Email(String Emailid) {
-		driver.findElement(email).sendKeys(Emailid);
-	}
-	void FirstName(String FName) {
-		driver.findElement(firstname).sendKeys(FName);
-	}
-	void LastName(String LName) {
-		driver.findElement(lastname).sendKeys(LName);
-	}
-	void RadioButton() {
-		driver.findElement(radiobutton).click();
-		Assert.assertTrue(true);
-	}
-	void AgeDropdown() {
-		WebElement Drop=driver.findElement(age);
-		Drop.click();
-		Select drop=new Select(Drop);
-		drop.selectByVisibleText("Select");
-	}
-	void CheckBox() {
-		driver.findElement(checkbox).click();
-	}
-	void PublishReview() {
-		driver.findElement(publishreview).click();
-		String Expected="your review has been successfully posted";
-		String Actual="your review has been successfully posted";
-		Assert.assertEquals(Expected,Actual);
-		System.out.println("Message was displayed");
-		
-	}
-	
-	
-	
-	
-	
-	
+    WebDriver driver;
+    WebDriverWait wait;
 
+    // Constructor
+    public ProductDetailsPage4th(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+    }
+
+    // Locators
+    By popupClose = By.xpath("//button[@id='wzrk-confirm']");
+    By searchBar = By.xpath("//input[@aria-label='Search']");
+    By searchButton = By.xpath("//button[contains(@aria-label,'Search')]");
+    By firstProduct = By.xpath("(//a[contains(@class,'product')])[1]");
+    By productTitle = By.xpath("//h1");
+    By price = By.xpath("//span[contains(@class,'selling-price') or contains(@class,'price')]");
+    By sizeOption = By.xpath("(//div[contains(@class,'size-selector')]//button)[1]");
+    By addToCart = By.xpath("//button[contains(text(),'Add to Cart')]");
+    By goToCart = By.xpath("//a[contains(@href,'/cart')]");
+    By reviewTab = By.xpath("//a[contains(text(),'Reviews')]");
+    By writeReviewButton = By.xpath("//button[contains(text(),'Write a review')]");
+    By reviewTextarea = By.xpath("//textarea[@name='review']");
+    By ratingStar = By.xpath("(//span[contains(@class,'star')])[5]"); // 5-star
+    By submitReviewButton = By.xpath("//button[contains(text(),'Submit')]");
+    
+    
+    
+    public void closePopupIfVisible() {
+        List<WebElement> popups = driver.findElements(popupClose);
+        if (!popups.isEmpty() && popups.get(0).isDisplayed()) {
+            popups.get(0).click();
+            System.out.println("Popup closed.");
+        } else {
+            System.out.println("No popup found.");
+        }
+    }
+
+
+    public void searchProduct(String productName) {
+        closePopupIfVisible(); // Make sure popup doesn't block
+
+        List<WebElement> bars = driver.findElements(searchBar);
+        if (!bars.isEmpty()) {
+            WebElement bar = bars.get(0);
+            bar.clear();
+            bar.sendKeys(productName);
+            driver.findElement(searchButton).click();
+            System.out.println("Search executed for: " + productName);
+        } else {
+            System.out.println("Search bar not found.");
+        }
+    }
+
+
+    public void openFirstProduct() {
+        wait.until(ExpectedConditions.elementToBeClickable(firstProduct)).click();
+    }
+
+    public String getProductTitle() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(productTitle)).getText();
+    }
+
+    public String getPrice() {
+        List<WebElement> prices = driver.findElements(price);
+        if (!prices.isEmpty()) {
+            return prices.get(0).getText();
+        } else {
+            return "Price not found";
+        }
+    }
+
+
+    public void selectSizeIfAvailable() {
+        List<WebElement> sizes = driver.findElements(sizeOption);
+        if (!sizes.isEmpty()) {
+            sizes.get(0).click();
+            System.out.println("Size selected.");
+        } else {
+            System.out.println("Size not available.");
+        }
+    }
+
+
+    public void addToCart() {
+        List<WebElement> buttons = driver.findElements(addToCart);
+        if (!buttons.isEmpty()) {
+            buttons.get(0).click();
+            System.out.println("Add to Cart clicked.");
+        } else {
+            System.out.println("Add to Cart button not found.");
+        }
+    }
+
+
+    public void goToCart() {
+        wait.until(ExpectedConditions.elementToBeClickable(goToCart)).click();
+    }
+    
+    
+    public void goBackToPreviousPage() {
+        driver.navigate().back();
+        System.out.println("Navigated back to previous page.");
+    }
+
+    public void openReviewTabAndWriteReview(String reviewText) {
+        if (!driver.findElements(reviewTab).isEmpty()) {
+            driver.findElement(reviewTab).click();
+            driver.findElement(writeReviewButton).click();
+            driver.findElement(ratingStar).click();
+            driver.findElement(reviewTextarea).sendKeys(reviewText);
+            driver.findElement(submitReviewButton).click();
+            System.out.println("Review submitted successfully.");
+        } else {
+            System.out.println("Review tab not found.");
+        }
+    }
+    public void verifyCartPageLoaded() {
+        if (driver.getCurrentUrl().contains("/cart")) {
+            System.out.println("Cart page loaded successfully.");
+        } else {
+            System.out.println("Cart page not loaded.");
+        }
+    }
+
+
+  
 }
+
+
+
+
+
+
