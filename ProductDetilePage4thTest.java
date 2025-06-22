@@ -1,52 +1,77 @@
-package Decathlonproject;
+package DecathlonProjectTestRunner;
 
-import java.time.Duration;
-
+import DecathlonProjectTest.ProductDetailsPage4th;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class ProductDetilePage4thTest {
-	WebDriver driver;
-	
-	@BeforeClass
-	void setup() throws InterruptedException {
-		driver=new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://www.decathlon.in/");
-		driver.manage().window().maximize();
-		Thread.sleep(5000);
-		
-	}
-	@Test
-	void test() {
-		ProductDetailsPage4th Product =new ProductDetailsPage4th(driver);
-		Product.searchbar("Watch");
-		Product.LocateWatch();
-		Product.Reviews();
-		Product.TypeReviews(); 
-		Product.Starts();
-		Product.ReviewTitle("Excellent");
-		Product.TextReviews();
-		Product.YES();
-		Product.Dropdown();
-		Product.Next();
-		Product.Email("kusumababu017@gmail.com");
-		Product.FirstName("Madavali");
-		Product.LastName("Kusuma");
-		Product.RadioButton();
-		Product.AgeDropdown();
-		Product.CheckBox();
-		Product.PublishReview();
-		
-	}
-	@AfterClass
-	void Teardown() {
-		driver.quit();
-	}
-	
-	
-	
+
+    WebDriver driver;
+    ProductDetailsPage4th productPage;
+
+    @BeforeMethod
+    public void setup() {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.get("https://www.decathlon.in/");
+        productPage = new ProductDetailsPage4th(driver);
+    }
+
+    @Test
+    public void testCompleteProductFlow() throws InterruptedException {
+        // Step 1: Handle popup
+        productPage.closePopupIfVisible();
+        Thread.sleep(2000);
+        
+    	 // Step 2: Search product
+        productPage.searchProduct("tshirt");
+        Thread.sleep(2000);
+        
+    	// Step 3: Select first product
+        productPage.openFirstProduct();
+        Thread.sleep(2000);
+        
+        
+    	 // Step 4: Get product details    
+      	productPage.getProductTitle();
+      	 Thread.sleep(2000);
+      	
+      	//step5: Price
+        productPage.getPrice();
+    	 Thread.sleep(2000);
+    	
+    	// Step 6: Size selection
+    	 productPage.selectSizeIfAvailable();
+    	 Thread.sleep(2000);
+    	
+        //Step 6: Add to cart and go to cart
+        productPage.addToCart();
+        Thread.sleep(2000);
+
+       // Step7: goto cart
+      productPage.goToCart();
+      Thread.sleep(2000); 
+
+    	//step8:Back to previous page 
+    	productPage.goBackToPreviousPage(); 
+     	Thread.sleep(2000);
+       
+       // Step9: OpenReview
+      productPage.openReviewTabAndWriteReview("Very good quality. Totally satisfied!");
+      Thread.sleep(2000);
+                    
+
+        //Step10: Last step
+    	productPage.goToCart();
+    	productPage.verifyCartPageLoaded();
+    	 Thread.sleep(2000);
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 }
