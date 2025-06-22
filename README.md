@@ -1,90 +1,96 @@
+# 👩🏻‍💻 Project Title: Decathlon E2E Testing – Shopping Platform
 
-# 🛒 Decathlon Website Testing Project
-
-## 📘 Overview
-This project involves testing the **Decathlon India e-commerce website** using both **Manual and Automation Testing** techniques.  
-It covers user flows like login, product search, cart operations, and checkout to ensure functionality and user experience are working perfectly.
+This project focuses on **end-to-end testing of the Decathlon shopping platform**. It includes both **manual testing** and **automation testing using Selenium WebDriver** to verify all critical user flows such as search, cart, and review functionality using the POM (Page Object Model) framework.
 
 ---
 
-## 🔍 What Was Tested
-- User Login and Logout
-- Product Search and Filter
-- Add/Remove Products from Cart
-- Checkout Process and Order Summary
-- Error Message Validations
-- Cross-Browser Compatibility
+## 🌐 Project Overview
+
+<img width="250" alt="decathlon-logo" src="https://www.decathlon.in/_next/image?url=https%3A%2F%2Fwww.decathlon.in%2F_logo.jpg&w=384&q=75" />
+
+- **Website Under Test**: [Decathlon India](https://www.decathlon.in)
+- 👩🏻‍💻 **Madavali Kusuma** – Manual and Automation Test Engineer
 
 ---
 
-## 🧪 Testing Types
-- ✅ Manual Testing (Test Cases, Bug Reports, Mind Map)
-- 🤖 Automation Testing using Selenium + Java + TestNG
-- 🔁 Functional Testing
-- 🧠 Exploratory Testing
-- 📊 Bug Tracking via Jira
+## 📑 Key Deliverables
+
+### 🧪 Manual Testing
+- Functional Testing
+- Documented Test Cases
+- Bug Report and Bug Summary
+- Mind Map
+- RTM (Requirement Traceability Matrix)
+
+### 🤖 Automation Testing
+- Selenium WebDriver + Java
+- TestNG Framework
+- Page Object Model (POM) design
+- Assertions and Validations
+- Maven for dependency management
+- Screenshots for failed scenarios
 
 ---
 
-## 🧰 Tools Used
-- **Language**: Java  
-- **Automation**: Selenium WebDriver, TestNG  
-- **Build Tool**: Maven  
-- **Bug Tracking**: Jira  
-- **Documentation**: Excel, Word, XMind  
-- **Framework**: Page Object Model (POM)  
-- **Version Control**: Git + GitHub
+## 🔍 Key Testing Scenarios
+
+1. **Homepage Functionality**
+   - Search product
+   - Interact with account, store, support, cart, etc.
+2. **Product Page**
+   - Add to cart
+   - View product details
+3. **Cart Page**
+   - Update quantity
+   - Delete product
+   - Verify price
+4. **Review Functionality**
+   - Submit product reviews
+5. **Popups Handling**
+   - Geo-location
+   - Cookie consent
+   - Welcome popups
+
+---
+
+## 🛠️ Tools & Technologies Used
+
+- **Selenium WebDriver**
+- **Java**
+- **TestNG**
+- **Maven**
+- **Extent Reports (optional)**
+- **VS Code / IntelliJ**
+- **GitHub**
 
 ---
 
 
 ---
 
-## 🚦 Test Execution
-> _You can run tests using your IDE (Eclipse/IntelliJ) or Maven command:_
+## ✅ Highlights
 
-- Right-click on `testng.xml` → Run as TestNG Suite  
-- Or use this command (if Maven is configured):
-  ```bash
-  mvn test
-
----
-
-## 🚦 Test Execution
-> _You can run tests using your IDE (Eclipse/IntelliJ) or Maven command:_
-
-- Right-click on `testng.xml` → Run as TestNG Suite  
-- Or use this command (if Maven is configured):
-  ```bash
-  mvn test
-✨ Highlights
-Real-world POM-based automation framework
-
-Covered both Manual and Automation test approaches
-
-Bugs tracked and reported via Jira
-
-Full test documentation prepared (Plan, Cases, Mind Map)
-
-👩‍💻 Created By
-Madavali Kusuma
-🔗 GitHub: kusuma6379
-🔗 LinkedIn: LinkedIn Profile
-
-🛍️ Thank you for checking out the Decathlon Website Testing Project!
-
-markdown
-Copy
-Edit
+- Used **Page Object Model** for maintainability and scalability.
+- Implemented **implicit and explicit waits** for dynamic page content.
+- Handled dynamic elements, popups, and synchronization challenges.
+- Asserted title, cart updates, and element visibility using `TestNG`.
 
 ---
 
-You don’t need to use `git clone` or command line. Just:
+## ✨ Conclusion
 
-1. Go to your GitHub repo
-2. Click **Add file > Create new file**
-3. Name it `README.md`
-4. Paste all the content above
-5. Click **Commit new file**
+This solo project demonstrates solid understanding of end-to-end manual and automation testing. Focused on:
+- User-friendly test structure
+- Clean and reusable automation scripts
+- Full testing cycle including documentation
+
+---
+
+## 📞 Contact
+
+**Madavali Kusuma**  
+📧 Email: kusumababu6379@gmail.com  
+🔗 LinkedIn: [linkedin.com/in/madavali-kusuma-3496b4341](https://www.linkedin.com/in/madavali-kusuma-3496b4341/)  
+💻 GitHub: [github.com/kusuma6379](https://github.com/kusuma6379)
 
 
